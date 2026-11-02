@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ==== Core SEO ==== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Annique Rooibos – South Africa’s Premier Rooibos Skincare & Wellness Hub</title>
+    <meta name="description"
+          content="Explore organic Rooibos skincare, AI skin‑diagnostic tools, affiliate earnings calculator and Black November specials. Independent consultant portal – ID 527160.">
+    <meta name="author" content="Annique Rooibos">
+    <link rel="canonical" href="https://example.com/">
+
+    <!-- ==== Open Graph ==== -->
+    <meta property="og:title" content="Annique Rooibos – Rooibos Skincare & Wellness Hub">
+    <meta property="og:description"
+          content="High‑performance organic Rooibos formulas, AI diagnostic routine, affiliate earnings calculator and Black November media assets.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://example.com/assets/og-image.jpg">
+
+    <!-- ==== Favicons (add your own) ==== -->
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- ==== Structured Data (Organization + Breadcrumb) ==== -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Organization",
+      "name":"Annique Rooibos",
+      "url":"https://example.com/",
+      "logo":"https://example.com/assets/logo.png",
+      "sameAs":[
+        "https://www.facebook.com/annique.rooibos",
+        "https://www.instagram.com/annique.rooibos"
+      ]
+    }
+    </script>
+
+    <style>
+        /* ==== Design Tokens ==== */
+        :root {
+            --primary-red:    #8B0000;   /* brand red */
+            --accent-gold:    #D4AF37;   /* brand gold */
+            --bg-light:       #FDFBF7;
+            --text-dark:      #2C2C2C;
+            --white:          #FFFFFF;
+            --focus-outline:  3px dashed var(--accent-gold);
+        }
+
+        /* ==== Global Reset ==== */
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:var(--bg-light);
+            color:var(--text-dark);
+            line-height:1.6;
+        }
+        a{
+            color:var(--primary-red);
+            text-decoration:none;
+            transition:color .2s;
+        }
+        a:focus{outline:var(--focus-outline);}
+        button, .btn{
+            cursor:pointer;
+            border:none;
+        }
+
+        /* ==== Banner (announcement) ==== */
+        .banner{
+            background:#5c0000;
+            color:#FFD700;
+            text-align:center;
+            padding:.5rem;
+            font-weight:600;
+            font-size:.9rem;
+        }
+
+        /* ==== Header & Nav ==== */
+        header{
+            background:var(--primary-red);
+            color:var(--white);
+            padding:.75rem 2rem;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .logo{
+            font-weight:700;
+            font-size:1.2rem;
+        }
+        .logo span{
+            font-weight:400;
+            opacity:.8;
+            font-size:.8rem;
+            margin-left:.4rem;
+        }
+        .nav-links a{
+            margin-left:1.5rem;
+            font-weight:600;
+        }
+        .nav-links a:hover{color:#ffb3b3;}
+
+        /* ==== Hero ==== */
+        .hero{
+            padding:3rem 2rem;
+            text-align:center;
+            background:linear-gradient(135deg,#fff5f5,#ffe6e6);
+            border-bottom:2px solid #ddd;
+        }
+        .hero h1{
+            font-size:2.5rem;
+            color:var(--primary-red);
+            margin-bottom:1rem;
+        }
+        .hero p{
+            max-width:720px;
+            margin:auto;
+            color:#555;
+        }
+        .quick-routes{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:1rem;
+            margin-top:1.5rem;
+        }
+        .btn{
+            background:var(--primary-red);
+            color:var(--white);
+            padding:.75rem 1.5rem;
+            border-radius:4px;
+            font-weight:bold;
+            transition:background .2s,transform .2s;
+        }
+        .btn.secondary{
+            background:#444;
+        }
+        .btn:hover{
+            background:#600;
+            transform:translateY(-2px);
+        }
+
+        /* ==== Main Container ==== */
+        .container{
+            max-width:1200px;
+            margin:2rem auto;
+            padding:0 1rem;
+        }
+        .section-title{
+            font-size:1.8rem;
+            color:var(--primary-red);
+            margin-bottom:1.5rem;
+            border-bottom:2px solid var(--accent-gold);
+            padding-bottom:.5rem;
+        }
+
+        /* ==== Card Grid ==== */
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+            gap:1.5rem;
+        }
+        .card{
+            background:var(--white);
+            border-radius:8px;
+            padding:1.5rem;
+            box-shadow:0 4px 6px rgba(0,0,0,.05);
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            opacity:0;
+            transform:translateY(20px);
+            animation:fadeIn .6s forwards;
+        }
+        /* staggered animation */
+        .card:nth-child(1){animation-delay:.1s;}
+        .card:nth-child(2){animation-delay:.2s;}
+        .card:nth-child(3){animation-delay:.3s;}
+        .card:nth-child(4){animation-delay:.4s;}
+        .card:nth-child(5){animation-delay:.5s;}
+        .card:nth-child(6){animation-delay:.6s;}
+        .card:nth-child(7){animation-delay:.7s;}
+        .card:nth-child(8){animation-delay:.8s;}
+        .card:nth-child(9){animation-delay:.9s;}
+
+        @keyframes fadeIn{
+            to{opacity:1;transform:none;}
+        }
+
+        .card-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:.5rem;
+        }
+        .range-tag{
+            font-size:.75rem;
+            text-transform:uppercase;
+            letter-spacing:1px;
+            background:#eee;
+            padding:.2rem .5rem;
+            border-radius:3px;
+            font-weight:bold;
+            color:#555;
+        }
+        .rating{
+            color:#f39c12;
+            font-size:.9rem;
+        }
+        .card h3{
+            font-size:1.15rem;
+            margin:.5rem 0;
+            color:var(--text-dark);
+        }
+        .card p{
+            flex-grow:1;
+            font-size:.9rem;
+            color:#666;
+            margin-bottom:1rem;
+        }
+        .price-row{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            border-top:1px solid #eee;
+            padding-top:1rem;
+            margin-top:1rem;
+        }
+        .price{
+            font-size:1.2rem;
+            font-weight:bold;
+            color:var(--primary-red);
+        }
+
+        /* ==== Footer ==== */
+        footer{
+            background:#222;
+            color:#aaa;
+            text-align:center;
+            padding:2rem;
+            font-size:.9rem;
+        }
+        footer a{color:#ddd;}
+
+        /* ==== Reduced Motion ==== */
+        @media (prefers-reduced-motion: reduce){
+            .card{animation:none;opacity:1;transform:none;}
+            .btn{transition:none;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==== Announcement Banner ==== -->
+    <div class="banner" role="region" aria-label="Active campaign">
+        🔥 ACTIVE CAMPAIGN: Black November Rooibos Specials Live | Consultant ID: 527160
+    </div>
+
+    <!-- ==== Header & Navigation ==== -->
+    <header>
+        <div class="logo">
+            <strong>ANNIQUE ROOIBOS</strong>
+            <span>HERITAGE BEAUTY &amp; HEALTH PORTAL</span>
+        </div>
+        <nav class="nav-links" aria-label="Primary navigation">
+            <a href="#">Main Storefront</a>
+            <a href="#">Join Consultant Team</a>
+        </nav>
+    </header>
+
+    <!-- ==== Hero Section ==== -->
+    <section class="hero" aria-labelledby="hero-heading">
+        <span class="range-tag" style="background:#e2d2a5;color:#333;">
+            OFFICIAL INDEPENDENT CONSULTANT PORTAL (#527160)
+        </span>
+        <h1 id="hero-heading">South Africa's Premier Rooibos Skincare &amp; Wellness Hub</h1>
+        <p>
+            Explore high‑performance organic Rooibos formulas, run automated skin diagnostic routines,
+            calculate affiliate commissions, and access conversion‑tested Black November media assets—all
+            linked directly with active consultant tracking.
+        </p>
+        <div class="quick-routes">
+            <a href="#" class="btn">🛍️ Black November Catalog</a>
+            <a href="#" class="btn secondary">🧬 AI Skin Diagnostic Routine</a>
+            <a href="#" class="btn secondary">📊 Affiliate Earnings Calculator</a>
+        </div>
+    </section>
+
+    <!-- ==== Product Grid ==== -->
+    <main class="container" role="main">
+        <h2 class="section-title">Annique Rooibos Product &amp; Deal Showcase</h2>
+
+        <div class="grid">
+            <!-- -------------- PRODUCT CARD TEMPLATE -------------- -->
+            <!-- Copy‑paste the block below for each product, updating the content -->
+
+            <article class="card" aria-labelledby="prod1-title">
+                <div>
+                    <header class="card-header">
+                        <span class="range-tag">Lucid</span>
+                        <span class="rating" aria-label="4 out of 5 stars">★ 4.0</span>
+                    </header>
+                    <h3 id="prod1-title">Lucid Moisturiser for Dry Skin 50ml</h3>
+                    <p>Deeply hydrating 50ml nourishment infused with organic Rooibos extract for dry and mature skin.</p>
+                </div>
+                <footer class="price-row">
+                    <span class="price">R 829.00</span>
+                    <a href="#" class="view-deal">View Deal →</a>
+                </footer>
+            </article>
+
+            <article class="card" aria-labelledby="prod2-title">
+                <div>
+                    <header class="card-header">
+                        <span class="range-tag">Forever Young</span>
+                        <span class="rating" aria-label="5 out of 5 stars">★ 5.0</span>
+                    </header>
+                    <h3 id="prod2-title">Forever Young Revitalising Cream 50ml</h3>
+                    <p>Flagship restorative cream targeting fine lines, wrinkles, and skin elasticity with concentrated Rooibos antioxidants.</p>
+                </div>
+                <footer class="price-row">
+                    <span class="price">R 1059.00</span>
+                    <a href="#" class="view-deal">View Deal →</a>
+                </footer>
+            </article>
+
+            <article class="card" aria-labelledby="prod3-title">
+                <div>
+                    <header class="card-header">
+                        <span class="range-tag">Essense</span>
+                        <span class="rating" aria-label="5 out of 5 stars">★ 5.0</span>
+                    </header>
+                    <h3 id="prod3-title">Essense Hyaluronic Acid³ Serum 30ml</h3>
+                    <p>Multi‑layer hydration serum boosting moisture retention, skin elasticity, and immediate plumpness.</p>
+                </div>
+                <footer class="price-row">
+                    <span class="price">R 699.00</span>
+                    <a href="#" class="view-deal">View Deal →</a>
+                </footer>
+            </article>
+
+            <article class="card" aria-labelledby="prod4-title">
+                <div>
+                    <header class="card-header">
+                        <span class="range-tag">Forever Young</span>
+                        <span class="rating" aria-label="4.4 out of 5 stars">★ 4.4</span>
+                    </header>
+                    <h3 id="prod4-title">Forever Young Crème de Nuit 50ml</h3>
+                    <p>Rich anti‑ageing night cream nourishing and repairing the skin overnight.</p>
+                </div>
+                <footer class="price-row">
+                    <span class="price">R 749.00</span>
+                    <a href="#" class="view-deal">View Deal →</a>
+                </footer>
+            </article>
+
+            <article class="card" aria-labelledby="prod5-title">
+                <div>
+                    <header class="card-header">
+                        <span class="range-tag">Lucid</span>
+                        <span class="rating" aria-label="4.7 out of 5 stars">★ 4.7</span>
+                    </header>
+                    <h3 id="prod5-title">Lucid Crème Cleanser 200ml</h3>
+                    <p>Gently removes impurities while maintaining vital moisture balance in dry skin types.</p>
+                </div>
+                <footer class="price-row">
+                    <span class="price">R 319.00</span>
+                    <a href="#" class="view-deal">View Deal →</a>
+                </footer>
+            </article>
+
+            <article class="card" aria-labelledby="prod6-title">
+                <div>
+                    <header class="card-header">
+                        <span class="range-tag">Essense</span>
+                        <span class="rating" aria-label="5 out of 5 stars">★ 5.0</span>
+                    </header>
+                    <h3 id="prod6-title">Essense Sensi Crème 50ml</h3>
+                    <p>Soothing treatment specifically formulated to calm sensitive, red, or irritated skin.</p>
+                </div>
+                <footer class="price-row">
+                    <span class="price">R 219.00</span>
+                    <a href="#" class="view-deal">View Deal →</a>
+                </footer>
+            </article>
+
+            <article class="card" aria-labelledby="prod7-title">
+                <div>
+                    <header class="card-header">
+                        <span class="range-tag">Face Facts</span>
+                        <span class="rating" aria-label="4.5 out of 5 stars">★ 4.5</span>
+                    </header>
+                    <h3 id="prod7-title">Face Facts Gel Cleanser 200ml</h3>
+                    <p>Refreshing deep cleanser formulated for normal, oily, or acne‑prone skin.</p>
+                </div>
+                <footer class="price-row">
+                    <span class="price">R 239.00</span>
+                    <a href="#" class="view-deal">View Deal →</a>
+                </footer>
+            </article>
+
+            <article class="card" aria-labelledby="prod8-title">
+                <div>
+                    <header class="card-header">
+                        <span class="range-tag">Forever Healthy</span>
+                        <span class="rating" aria-label="5 out of 5 stars">★ 5.0</span>
+                    </header>
+                    <h3 id="prod8-title">Forever Healthy Collagen with Rooibos 150g</h3>
+                    <p>Nutraceutical supplement supporting inner skin elasticity, hair growth, and joint health.</p>
+                </div>
+                <footer class="price-row">
+                    <span class="price">R 399.00</span>
+                    <a href="#" class="view-deal">View Deal →</a>
+                </footer>
+            </article>
+
+            <article class="card" aria-labelledby="prod9-title">
+                <div>
+                    <header class="card-header">
+                        <span class="range-tag">Tea</span>
+                        <span class="rating" aria-label="4.9 out of 5 stars">★ 4.9</span>
+                    </header>
+                    <h3 id="prod9-title">Rooibos &amp; Ginger Tea 50g</h3>
+                    <p>Calming herbal tea blend promoting digestive comfort and immune resilience.</p>
+                </div>
+                <footer class="price-row">
+                    <span class="price">R 72.00</span>
+                    <a href="#" class="view-deal">View Deal →</a>
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <!-- ==== Footer ==== -->
+    <footer role="contentinfo">
+        <p>Annique Rooibos Independent Consultant Pipeline | Consultant Reference ID: 527160</p>
+    </footer>
+
+</body>
+</html>
